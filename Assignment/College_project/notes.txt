@@ -1,0 +1,23 @@
+postgresql installation setup:
+------------------------------
+cd /etc/apt/sources.list.d/
+sudo touch pgdg.list
+sudo vi pgdg.list
+deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-10 postgresql-server-dev-10 pgadmin4
+
+configure postgres
+------------------
+service postgresql 
+service postgresql status
+sudo su postgres
+psql
+\l  - list all databases
+\du - list of all roles present to current user
+ALTER USER postgres WITH PASSWORD 'test123';
+CREATE USER college_admin WITH PASSWORD 'areeb';
+ALTER USER college_admin WITH SUPERUSER;
+DROP USER college_admin;
+\q-quit

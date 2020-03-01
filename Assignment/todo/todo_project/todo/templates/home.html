@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block search %}
+<div class="container">
+    {% for item in queryset %}
+        <p>{{ item }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block main %}
+<!--Displaying messages if any first  -->
+{% if messages %}
+    <!-- looping through messages -->
+    {% for message in messages %}
+        <div class="alert alert-warning alert-dismissable" role="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>X</sup></small>
+            </button>
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
+<!-- displaying items if any -->
+{% if all_items %}
+<table class="table table-black">
+    <!-- Looping through items -->
+    {% for things in all_items %}
+        {% if things.completed %}
+            <!-- display item and completed fields from form -->
+            <tr class="table-warning">
+                <td class="striker">{{things.item}}<a href="{% url 'edit' things.id %}"><span class="badge badge-secondary badge-pill ml-2">edit</span></a></td>
+                <td><center><a href="{% url 'unstrike' things.id %}">Unstrike</a></center></td>
+                <td><center><a href="{% url 'delete' things.id %}"><span class="close">&times;</span></a></center></td>
+            </tr>
+        {% else %}
+            <!-- display item and completed fields from form -->
+            <tr>
+                <td>{{things.item}}<a href="{% url 'edit' things.id %}"><span class="badge badge-secondary badge-pill ml-2">edit</span></a></td>
+                <td><center><a href="{% url 'strike_off' things.id %}">Strike off</a></center></td>
+                <td><center><a href="{% url 'delete' things.id %}"><span class="close">&times;</span></a></center></td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

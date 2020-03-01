@@ -1,0 +1,48 @@
+/* base styles - base, mixins, normalize, variables */
+@import "base/_base.scss";
+@import "base/_mixins.scss";
+@import "base/_variables.scss";
+@import "base/_normalize.scss";
+
+/* Modules - individual site components */ 
+@import "modules/_blocks.scss";
+@import "modules/_buttons.scss";
+@import "modules/_components.scss";
+@import "modules/_sections.scss";
+@import "modules/_typography.scss";
+
+/* layouts - Page layout Styles */
+@import "layouts/_header.scss"; 
+@import "layouts/_footer.scss"; 
+@import "layouts/_nav.scss";
+
+
+
+.footer{
+    background: #152F4F;
+    color:white;
+    
+    .links{
+      ul {list-style-type: none;}
+      li a{
+        color: white;
+        transition: color .2s;
+        &:hover{
+          text-decoration:none;
+          color:#4180CB;
+          }
+      }
+    }  
+    .about-company{
+      i{font-size: 25px;}
+      a{
+        color:white;
+        transition: color .2s;
+        &:hover{color:#4180CB}
+      }
+    } 
+    .location{
+      i{font-size: 18px;}
+    }
+    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+  }

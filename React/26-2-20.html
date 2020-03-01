@@ -1,0 +1,69 @@
+<!-- import React from 'react';
+
+import './SearchBar.css';
+
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      term: ''
+    };
+
+    this.handleTermChange = this.handleTermChange.bind(this);
+    this.search = this.search.bind(this);
+  }
+
+  handleTermChange(event) {
+    this.setState({term: event.target.value});
+  }
+
+  search() {
+    this.props.onSearch(this.state.term);
+  }
+
+  render() {
+    return (
+      <div className="SearchBar">
+        <input placeholder="Enter A Song Title" onChange={this.handleTermChange} />
+        <a onClick={this.search}>SEARCH</a>
+      </div>
+    );
+  }
+}
+
+export default SearchBar; -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function formatUser(user){
+        return user.firstName+ ' ' + user.lastName;
+      }
+
+      const user = {
+        firstName: 'Ghouse',
+        lastName: 'Shaik',
+      }
+
+      const element = (
+        <h1>Hello, {formatUser(user)}</h1>
+      );
+
+      ReactDOM.render(element, document.querySelector('#root'));
+    </script>
+  </body>
+</html>

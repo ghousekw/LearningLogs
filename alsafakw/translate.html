@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    var arrLang={
+        'en': {
+            'home': 'Home',
+            'charitable projects': 'Charitable Projects',
+            'guarantees': 'Guarantees',
+            'aboutus': 'About Us',
+            'signin': 'Sign In',
+        },
+        'ar': {
+            'home': 'رئيسية',
+            'charitable projects': 'مشاريع خيرية',
+            'guarantees': 'كفالات',
+            'aboutus': 'عن الجمعية',
+            'signin': 'تسجيل الدخول',
+        }
+    };
+    $(function() {
+  $('.translate').click(function() {
+    var lang = $(this).attr('id');
+
+    $('.lang').each(function(index, item) {
+      $(this).text(arrLang[lang][$(this).attr('key')]);
+    });
+  });
+});
+
+</script>
+  <!-- button to translate language -->
+  <button class="translate" id="en">English</button>
+  <button class="translate" id="ar">Arabic</button>
+  <ul>
+      <li class="lang" key="home">Home</li>
+      <li class="lang" key="aboutus">About Us</li>
+      <li class="lang" key="charitable projects">Charitable Projects</li>
+      <li class="lang" key="guarantees">Guarantees</li>
+      <li class="lang" key="signin">Sign In</li>
+  </ul>

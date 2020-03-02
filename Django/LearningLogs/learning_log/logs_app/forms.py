@@ -9,3 +9,11 @@ class TopicForm(forms.ModelForm):
         fields = ['text']
         # generate a label for a text field
         labels = {'text': ''}
+
+
+class EntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ['text']
+        labels = {'text': ''}
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})}

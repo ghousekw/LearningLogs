@@ -1,0 +1,11 @@
+{% extends 'logs_app/base.html' %}
+{% block content %}
+    <p>Topic</p>
+    <ul>
+        {% for topic in topics %}
+            <li>{{ topic }}</li>
+        {% empty %}
+            <li>No topic has been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
